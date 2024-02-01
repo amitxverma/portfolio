@@ -56,6 +56,18 @@ h6 {
     padding: 0;
 }
 
+@media screen and (max-width:1140px) {
+    .bg-video {
+        width: 1140px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .bg-video {
+        transform: translatex(-300px);
+    }
+}
+
 section {
     /* display: none; */
     display: block;
