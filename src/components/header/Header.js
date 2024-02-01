@@ -24,7 +24,7 @@ function Header() {
                         <p className="landing-text">Hi, my name is</p>
                     </div>
                     <div className="col-auto landing-title-wrapper">
-                        <h1 className="landing-title"><Link onClick={handleBodyClass} data-target="home" to="/">Amit Kumar</Link></h1>
+                        <h1 className="landing-title"><Link onClick={handleBodyClass} data-target="home" to="/">Amit Kumarr</Link></h1>
                     </div>
                     <div className="col-auto landing-subtitle-wrapper">
                         <h2 className="landing-subtitle">I'm a passionate <span className="portfolio-role">Frontend Developer</span> from India</h2>
