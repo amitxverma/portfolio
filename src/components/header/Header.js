@@ -1,20 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 
 function Header() {
-
-    function handleBodyClass(event) {
-        let elem = event.target;
+    const location = useLocation();
+    useEffect(() => {
         let bodyelem = document.body;
-        if (elem.getAttribute("data-target") === "home") {
+        if (location.pathname === "/") {
             bodyelem.classList.add("landing");
         } else {
             bodyelem.classList.remove("landing");
         }
-    }
+
+        let menu = document.querySelector(".navbar-collapse");
+        let navbtn = document.querySelector(".navbar-toggler");
+        if(menu.classList.contains("show")){
+            navbtn.click();
+        }
+
+    }, [location]);
 
     return (
         <>
@@ -24,7 +32,7 @@ function Header() {
                         <p className="landing-text">Hi, my name is</p>
                     </div>
                     <div className="col-auto landing-title-wrapper">
-                        <h1 className="landing-title"><Link onClick={handleBodyClass} data-target="home" to="/">Amit Kumar</Link></h1>
+                        <h1 className="landing-title"><Link data-target="home" to="/">Amit Kumar</Link></h1>
                     </div>
                     <div className="col-auto landing-subtitle-wrapper">
                         <h2 className="landing-subtitle">I'm a passionate <span className="portfolio-role">Frontend Developer</span> from India</h2>
@@ -36,11 +44,11 @@ function Header() {
                         </button>
                         <div className="navbar-collapse collapse" id="mainNav">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-lg-0 pe-3">
-                                <li><NavLink activeClassName="active" onClick={handleBodyClass} to="/" className="nav-link" data-target="home">Home</NavLink></li>
-                                <li><NavLink activeClassName="active" onClick={handleBodyClass} to="/about" className="nav-link" data-target="about">About</NavLink></li>
-                                <li><NavLink activeClassName="active" onClick={handleBodyClass} to="/resume" className="nav-link" data-target="resume">Resume</NavLink></li>
-                                <li><NavLink activeClassName="active" onClick={handleBodyClass} to="/projects" className="nav-link" data-target="projects">Projects</NavLink></li>
-                                <li><NavLink activeClassName="active" onClick={handleBodyClass} to="/contact" className="nav-link" data-target="contact">Contact</NavLink></li>
+                                <li><NavLink to="/" className="nav-link" data-target="home">Home</NavLink></li>
+                                <li><NavLink to="/about" className="nav-link" data-target="about">About</NavLink></li>
+                                <li><NavLink to="/resume" className="nav-link" data-target="resume">Resume</NavLink></li>
+                                <li><NavLink to="/projects" className="nav-link" data-target="projects">Projects</NavLink></li>
+                                <li><NavLink to="/contact" className="nav-link" data-target="contact">Contact</NavLink></li>
                             </ul>
                         </div>
                     </nav>
