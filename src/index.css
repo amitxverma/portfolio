@@ -58,13 +58,13 @@ h6 {
 
 @media screen and (max-width:1140px) {
     .bg-video {
-        width: 1140px;
+        width: 1300px;
     }
 }
 
 @media screen and (max-width:576px) {
     .bg-video {
-        transform: translatex(-300px); 
+        transform: translatex(-350px); 
     }
 }
 
