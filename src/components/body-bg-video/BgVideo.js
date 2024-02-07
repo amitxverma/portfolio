@@ -5,7 +5,7 @@ function BgVideo() {
 
     return (
         <>
-            <video className='container-fluid bg-video' autoplay loop muted >
+            <video className='container-fluid bg-video' muted autoplay loop  >
                 <source src={bgVideo} type="video/mp4" /> 
             </video>
         </>
