@@ -5,9 +5,12 @@ function BgVideo() {
 
     return (
         <>
-            <video className='container-fluid bg-video' autoPlay loop muted playsinline>
+        dangerouslySetInnerHTML={{
+            __html: `<video className='container-fluid bg-video' autoPlay loop muted playsinline>
                 <source src={bgVideo} type="video/mp4" />
-            </video>
+            </video>`
+        }}
+            
         </>
     )
 }
