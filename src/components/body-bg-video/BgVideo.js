@@ -7,7 +7,7 @@ function BgVideo() {
         <>
         <div
                 dangerouslySetInnerHTML={{
-                    __html: `<video className='container-fluid bg-video' autoPlay loop muted playsinline>
+                    __html: `<video class='container-fluid bg-video' autoPlay loop muted playsinline>
                 <source src="${bgVideo}" type="video/mp4" />
             </video>`
                 }}
